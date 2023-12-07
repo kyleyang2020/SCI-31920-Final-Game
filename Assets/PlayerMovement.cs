@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class PlayerMovement : MonoBehaviour
 
     Rigidbody2D rb; // rigidbody2d storage
     public bool isJumping; // check for jumping
+
+    public string sceneName;
 
     void Start()
     {
@@ -36,6 +39,10 @@ public class PlayerMovement : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
             isJumping = false;
+        }
+        if (collision.gameObject.CompareTag("Kill"))
+        {
+            SceneManager.LoadScene(sceneName);
         }
     }
 }

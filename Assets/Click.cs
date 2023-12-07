@@ -46,13 +46,4 @@ public class Click : MonoBehaviour
             moving = false;
         }
     }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.tag == "Wall")
-            SceneManager.LoadScene("GameOver");
-        else if (collision.tag == "Finish")
-            SceneManager.LoadScene("Finish");
-
-    }
 }
